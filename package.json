@@ -1,0 +1,19 @@
+{
+  "name": "myflix-client-v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DennisPierins/myFlix-client-V2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DennisPierins/myFlix-client-V2/issues"
+  },
+  "homepage": "https://github.com/DennisPierins/myFlix-client-V2#readme"
+}
