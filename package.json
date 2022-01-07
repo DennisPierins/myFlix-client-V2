@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/DennisPierins/myFlix-client-V2#readme",
   "dependencies": {
+    "axios": "^0.24.0",
+    "parcel": "^2.0.0-rc.0",
+    "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
