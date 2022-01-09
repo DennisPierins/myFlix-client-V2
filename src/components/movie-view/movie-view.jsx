@@ -1,6 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import {
+  Form,
+  Button,
+  Card,
+  CardGroup,
+  Container,
+  Col,
+  Row,
+  Image,
+} from "react-bootstrap";
+
 export class MovieView extends React.Component {
   keypressCallback(event) {
     console.log(event.key);
@@ -20,19 +31,36 @@ export class MovieView extends React.Component {
     const { movie, onBackClick } = this.props;
     return (
       <div className="movie-view">
-        <div className="movie-poster">
-          <img src={movie.ImagePath} />
-        </div>
-        <div className="movie-title">
-          <span className="label">Title: </span>
-          <span className="value">{movie.Title}</span>
-        </div>
-        <div className="movie-description">
-          <span className="label">Description: </span>
-          <span className="value">{movie.Description}</span>
-        </div>
-        <button onClick={() => onBackClick(null)}>Back</button>
+        <Card style={{ width: "50rem" }}>
+          <Image src={movie.ImagePath} fluid={true} />
+          <Card.Body>
+            <Card.Title className="text-center">{movie.Title}</Card.Title>
+            <Card.Text>
+              <b>Description:</b> {movie.Description}
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        <br></br>
+        <Button variant="primary" onClick={() => onBackClick(null)}>
+          Back
+        </Button>
       </div>
+      // <div className="movie-view">
+      //   <div className="movie-poster">
+      //     <img src={movie.ImagePath} width="300" height="500" />
+      //   </div>
+      //   <div className="movie-title">
+      //     <span className="label">Title: </span>
+      //     <span className="value">{movie.Title}</span>
+      //   </div>
+      //   <div className="movie-description">
+      //     <span className="label">Description: </span>
+      //     <span className="value">{movie.Description}</span>
+      //   </div>
+      //   <Button variant="primary" onClick={() => onBackClick(null)}>
+      //     Back
+      //   </Button>
+      // </div>
     );
   }
 }
