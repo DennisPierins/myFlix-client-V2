@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { Link } from "react-router-dom";
+
 import {
   Form,
   Button,
@@ -39,11 +41,20 @@ export class MovieView extends React.Component {
               <b>Description:</b> {movie.Description}
             </Card.Text>
           </Card.Body>
+          <Link to={`/directors/${movie.Director.Name}`}>
+            <Button variant="link">Director: {movie.Director.Name}</Button>
+          </Link>
+
+          <Link to={`/genres/${movie.Genre.Name}`}>
+            <Button variant="link">Genre: {movie.Genre.Name}</Button>
+          </Link>
         </Card>
         <br></br>
-        <Button variant="primary" onClick={() => onBackClick(null)}>
-          Back
-        </Button>
+        <Link to={"/"}>
+          <Button className="back-button" variant="secondary">
+            Go Back
+          </Button>
+        </Link>
       </div>
       // <div className="movie-view">
       //   <div className="movie-poster">
