@@ -47,9 +47,9 @@ export class NavBar extends React.Component {
               Log Out
             </Nav.Link>
           </Nav>
-          <Form>
+          {/* <Form>
             <FormControl type="text" placeholder="Search" />
-          </Form>
+          </Form> */}
           {/* </Navbar.Collapse> */}
         </Container>
       </Navbar>

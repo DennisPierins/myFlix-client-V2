@@ -34528,20 +34528,6 @@ class NavBar extends _reactDefault.default.Component {
                         fileName: "src/components/navbar-view/nav-bar.jsx",
                         lineNumber: 37,
                         columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Form, {
-                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.FormControl, {
-                            type: "text",
-                            placeholder: "Search"
-                        }, void 0, false, {
-                            fileName: "src/components/navbar-view/nav-bar.jsx",
-                            lineNumber: 51,
-                            columnNumber: 13
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "src/components/navbar-view/nav-bar.jsx",
-                        lineNumber: 50,
-                        columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
