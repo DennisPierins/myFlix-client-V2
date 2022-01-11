@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import axios from "axios";
 
 import { Link } from "react-router-dom";
 
@@ -29,30 +30,61 @@ export class MovieView extends React.Component {
     document.removeEventListener("keypress", this.keypressCallback);
   }
 
+  addToFavoriteMovies(movie) {
+    const token = localStorage.getItem("token");
+    const userId = localStorage.getItem("user");
+    axios
+      .post(
+        `https://themyflixapi.herokuapp.com/users/${userId}/Movies/${movie._id}`,
+        { username: localStorage.getItem("user") },
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
+      .then((res) => {
+        console.log(res);
+        alert("This movie has been added to your Favorites.");
+      });
+  }
+
   render() {
-    const { movie, onBackClick } = this.props;
+    const { movie } = this.props;
     return (
       <div className="movie-view">
         <Card style={{ width: "50rem" }}>
           <Image src={movie.ImagePath} fluid={true} />
           <Card.Body>
             <Card.Title className="text-center">{movie.Title}</Card.Title>
+
             <Card.Text>
               <b>Description:</b> {movie.Description}
             </Card.Text>
           </Card.Body>
           <Link to={`/directors/${movie.Director.Name}`}>
-            <Button variant="link">Director: {movie.Director.Name}</Button>
+            <Button variant="link" style={{ margin: "10px" }}>
+              Director: {movie.Director.Name}
+            </Button>
           </Link>
 
           <Link to={`/genres/${movie.Genre.Name}`}>
-            <Button variant="link">Genre: {movie.Genre.Name}</Button>
+            <Button variant="link" style={{ margin: "10px" }}>
+              Genre: {movie.Genre.Name}
+            </Button>
           </Link>
         </Card>
-        <br></br>
         <Link to={"/"}>
-          <Button className="back-button" variant="secondary">
+          <Button
+            className="back-button"
+            variant="secondary"
+            style={{ margin: "10px" }}
+          >
             Go Back
+          </Button>
+          <Button
+            onClick={() => this.addToFavoriteMovies(movie)}
+            className="button-add-favorite"
+          >
+            Add to Favorite Movies
           </Button>
         </Link>
       </div>

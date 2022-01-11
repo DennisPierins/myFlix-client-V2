@@ -27,8 +27,8 @@ export function LoginView(props) {
     if (!username) {
       setUsernameErr("Username Required");
       isReq = false;
-    } else if (username.length < 2) {
-      setUsernameErr("Username must be 2 characters long");
+    } else if (username.length < 4) {
+      setUsernameErr("Username must be 4 characters long");
       isReq = false;
     }
     if (!password) {
@@ -81,7 +81,9 @@ export function LoginView(props) {
                       onChange={(e) => setUsername(e.target.value)}
                     />
                     {/* code added here to display validation error */}
-                    {usernameErr && <p>{usernameErr}</p>}
+                    {usernameErr && (
+                      <p style={{ color: "red" }}>{usernameErr}</p>
+                    )}
                   </Form.Group>
                   <br></br>
                   <Form.Group controlId="formPassword">
@@ -93,7 +95,9 @@ export function LoginView(props) {
                       onChange={(e) => setPassword(e.target.value)}
                     />
                     {/* code added here to display validation error */}
-                    {passwordErr && <p>{passwordErr}</p>}
+                    {passwordErr && (
+                      <p style={{ color: "red" }}>{passwordErr}</p>
+                    )}
                   </Form.Group>
                   <br></br>
                   <Button

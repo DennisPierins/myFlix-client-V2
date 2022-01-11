@@ -1,0 +1,9 @@
+.favorite-movies {
+  display: inline-flex;
+  flex-direction: row;
+  margin: 20px;
+}
+.my-flix {
+  color: steelblue;
+}
+/*# sourceMappingURL=index.c505f917.css.map */

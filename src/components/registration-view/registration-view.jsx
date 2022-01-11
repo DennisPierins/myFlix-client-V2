@@ -19,23 +19,57 @@ export function RegistrationView(props) {
   const [email, setEmail] = useState("");
   const [birthday, setBirthday] = useState("");
 
+  const [usernameError, setUsernameError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [birthdayError, setBirthdayError] = useState("");
+
+  const formValidation = () => {
+    // let usernameError = {};
+    // let passwordError = {};
+    // let emailError = {};
+    // let birthdayError = {};
+    let isValid = true;
+    if (username.trim().length < 6) {
+      setUsernameError("Username incorrect. Use at least 4 characters.");
+      isValid = false;
+    }
+    if (password.trim().length < 6) {
+      setPasswordError("Password incorrect. Use at least 5 characters.");
+      isValid = false;
+    }
+    if (!(email && email.includes(".") && email.includes("@"))) {
+      setEmailError("Email address incorrect.");
+      isValid = false;
+    }
+    if (birthday === "") {
+      setBirthdayError("Please enter your birthday.");
+      isValid = false;
+    }
+
+    return isValid;
+  };
+
   const handleRegister = (e) => {
     e.preventDefault();
-    axios
-      .post("https://themyflixapi.herokuapp.com/users", {
-        Username: username,
-        Password: password,
-        Email: email,
-        Birthday: birthday,
-      })
-      .then((response) => {
-        const data = response.data;
-        console.log(data);
-        window.open("/", "_self"); // the second argument '_self' is necessary so that the page will open in the current tab
-      })
-      .catch((e) => {
-        console.log("error registering the user");
-      });
+    let setisValid = formValidation();
+    if (setisValid) {
+      axios
+        .post("https://themyflixapi.herokuapp.com/users", {
+          Username: username,
+          Password: password,
+          Email: email,
+          Birthday: birthday,
+        })
+        .then((response) => {
+          const data = response.data;
+          console.log(data);
+          window.open("/", "_self"); // the second argument '_self' is necessary so that the page will open in the current tab
+        })
+        .catch((e) => {
+          console.log("error registering the user");
+        });
+    }
   };
 
   return (
@@ -57,6 +91,10 @@ export function RegistrationView(props) {
                       placeholder="Your Username"
                       onChange={(e) => setUsername(e.target.value)}
                     />
+                    {/* code added here to display validation error */}
+                    {usernameError && (
+                      <p style={{ color: "red" }}>{usernameError}</p>
+                    )}
                   </Form.Group>
                   <br></br>
                   <Form.Group controlId="formPasswordReg">
@@ -67,6 +105,10 @@ export function RegistrationView(props) {
                       onChange={(e) => setPassword(e.target.value)}
                       placeholder="Your Password"
                     />
+                    {/* code added here to display validation error */}
+                    {passwordError && (
+                      <p style={{ color: "red" }}>{passwordError}</p>
+                    )}
                     <br></br>
                   </Form.Group>
                   <Form.Group controlId="formEmailReg">
@@ -77,6 +119,8 @@ export function RegistrationView(props) {
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Your Email Address"
                     />
+                    {/* code added here to display validation error */}
+                    {emailError && <p style={{ color: "red" }}>{emailError}</p>}
                     <br></br>
                   </Form.Group>
                   <Form.Group controlId="formBirthdayReg">
@@ -86,6 +130,10 @@ export function RegistrationView(props) {
                       value={birthday}
                       onChange={(e) => setBirthday(e.target.value)}
                     />
+                    {/* code added here to display validation error */}
+                    {birthdayError && (
+                      <p style={{ color: "red" }}>{birthdayError}</p>
+                    )}
                   </Form.Group>
                   <br></br>
                   <Button
