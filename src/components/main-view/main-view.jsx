@@ -98,7 +98,7 @@ class MainView extends React.Component {
     // </Button>
     return (
       <Router>
-        <div className="main-view">
+        <Container className="main-view">
           <NavBar user={user} />
           <br></br>
           <br></br>
@@ -116,7 +116,7 @@ class MainView extends React.Component {
                     </Col>
                   );
                 if (movies.length === 0)
-                  return <div className="main-view"></div>;
+                  return <Container className="main-view"></Container>;
                 return movies.map((m) => (
                   <Col md={3} key={m._id}>
                     <MovieCard movie={m} />
@@ -150,7 +150,7 @@ class MainView extends React.Component {
             <Route
               path="/directors/:name"
               render={({ match }) => {
-                if (!movies) return <div className="main-view" />;
+                if (!movies) return <Container className="main-view" />;
                 return (
                   <DirectorView
                     director={
@@ -164,7 +164,7 @@ class MainView extends React.Component {
             <Route
               path="/genres/:name"
               render={({ match }) => {
-                if (!movies) return <div className="main-view" />;
+                if (!movies) return <Container className="main-view" />;
                 return (
                   <GenreView
                     genre={
@@ -186,7 +186,7 @@ class MainView extends React.Component {
               render={() => <ProfileUpdate movies={movies} />}
             />
           </Row>
-        </div>
+        </Container>
       </Router>
     );
   }

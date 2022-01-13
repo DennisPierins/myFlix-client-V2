@@ -22885,7 +22885,7 @@ class MainView extends _reactDefault.default.Component {
         //   Log Out
         // </Button>
         return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.BrowserRouter, {
-            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_containerDefault.default, {
                 className: "main-view",
                 children: [
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navBar.NavBar, {
@@ -22925,7 +22925,7 @@ class MainView extends _reactDefault.default.Component {
                                             onLoggedIn: (user)=>this.onLoggedIn(user)
                                         }, void 0, false, void 0, void 0)
                                     }, void 0, false, void 0, void 0));
-                                    if (movies.length === 0) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                                    if (movies.length === 0) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_containerDefault.default, {
                                         className: "main-view"
                                     }, void 0, false, void 0, void 0));
                                     return movies.map((m)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
@@ -22976,7 +22976,7 @@ class MainView extends _reactDefault.default.Component {
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
                                 path: "/directors/:name",
                                 render: ({ match  })=>{
-                                    if (!movies) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                                    if (!movies) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_containerDefault.default, {
                                         className: "main-view"
                                     }, void 0, false, void 0, void 0));
                                     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_directorView.DirectorView, {
@@ -22992,7 +22992,7 @@ class MainView extends _reactDefault.default.Component {
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
                                 path: "/genres/:name",
                                 render: ({ match  })=>{
-                                    if (!movies) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                                    if (!movies) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_containerDefault.default, {
                                         className: "main-view"
                                     }, void 0, false, void 0, void 0));
                                     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_genreView.GenreView, {
@@ -33887,7 +33887,7 @@ function LoginView(props) {
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
-                    xs: 4,
+                    xs: 6,
                     children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.CardGroup, {
                         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card, {
                             children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Body, {
@@ -34161,7 +34161,7 @@ function RegistrationView(props) {
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
-                    xs: 5,
+                    xs: 6,
                     children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.CardGroup, {
                         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card, {
                             children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Body, {
@@ -35228,7 +35228,7 @@ function ProfileUpdate(props) {
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
-                    xs: 5,
+                    xs: 6,
                     children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.CardGroup, {
                         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card, {
                             children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Body, {

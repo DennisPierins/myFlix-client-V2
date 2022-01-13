@@ -76,7 +76,7 @@ export function RegistrationView(props) {
     <Container>
       <Row className="justify-content-md-center">
         <Col></Col>
-        <Col xs={5}>
+        <Col xs={6}>
           <CardGroup>
             <Card>
               <Card.Body>

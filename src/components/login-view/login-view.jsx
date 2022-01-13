@@ -66,7 +66,7 @@ export function LoginView(props) {
     <Container>
       <Row className="justify-content-md-center">
         <Col></Col>
-        <Col xs={4}>
+        <Col xs={6}>
           <CardGroup>
             <Card>
               <Card.Body>
