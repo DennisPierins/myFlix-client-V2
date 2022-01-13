@@ -34481,7 +34481,7 @@ class NavBar extends _reactDefault.default.Component {
             bg: "primary",
             collapseOnSelect: true,
             fixed: "top",
-            expand: "lg",
+            expand: "sm",
             variant: "dark",
             children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
                 children: [

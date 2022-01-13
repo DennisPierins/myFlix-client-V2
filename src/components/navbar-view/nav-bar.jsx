@@ -26,7 +26,7 @@ export class NavBar extends React.Component {
         bg="primary"
         collapseOnSelect
         fixed="top"
-        expand="lg"
+        expand="sm"
         variant="dark"
       >
         <Container>
